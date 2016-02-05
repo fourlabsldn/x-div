@@ -16,5 +16,3 @@ function xController(func) {
   // it must be called from within the function.
   execute.call(func);
 }
-
-xController(console.log);
