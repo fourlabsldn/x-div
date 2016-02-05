@@ -7,5 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Four Labs",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-jshint": "^0.12.0",
+    "grunt-jscs": "^2.7.0",
+    "intern": "^3.0.6"
+  }
 }
