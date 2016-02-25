@@ -9,7 +9,8 @@
   "author": "Four Labs",
   "license": "ISC",
   "devDependencies": {
-    "grunt": "^0.4.5"
+    "grunt": "^0.4.5",
+    "jasmine": "^2.4.1"
   },
   "dependencies": {}
 }
