@@ -23,12 +23,11 @@
     this.appendChild(scriptEl);
   };
 
-  var xProto2 = Object.create(xProto);
-
   //Register the Element
-  document.registerElement('x-div', { prototype: xProto });
+  document.registerElement('x-div', {
+    prototype: xProto,
+  });
 }());
-
 
 // ===================================
 //      Controller
@@ -36,13 +35,13 @@
 
 // Calls a function and gives it an element to act on.
 function xController(func) {
- 'use strict';
+  'use strict';
 
- var execute = function () {
-   func(document.currentScript.parentElement);
- };
+  var execute = function () {
+    func.call(document.currentScript.parentElement, document.currentScript.parentElement);
+  };
 
- // For document.currentScript.parentElement to give us the right element
- // it must be called from within the function.
- execute.call(func);
+  // For document.currentScript.parentElement to give us the right element
+  // it must be called from within the function.
+  execute.call(func);
 }

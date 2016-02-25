@@ -9,8 +9,7 @@
   "author": "Four Labs",
   "license": "ISC",
   "devDependencies": {
-
+    "grunt": "^0.4.5"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
