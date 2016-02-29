@@ -1,5 +1,5 @@
 {
-  "name": "x-div-web-comp",
+  "name": "x-div",
   "version": "1.0.0",
   "description": "Web Component to load Javascript modules",
   "main": "index.js",
@@ -14,3 +14,4 @@
   },
   "dependencies": {}
 }
+
