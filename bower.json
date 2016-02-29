@@ -21,8 +21,6 @@
     "lib",
     "node_modules/",
     "bower_components/",
-    "**/.*",
-    ".*",
     "tests/",
     "bower.json",
     "package.json",
