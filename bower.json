@@ -2,6 +2,7 @@
   "name": "x-div",
   "description": "Web Component to load encapsulated JavaScript modules",
   "main": "js/x-div.js",
+  "version": "1.0.2",
   "authors": [
     "Four Labs"
   ],
