@@ -1,5 +1,7 @@
 # x-div Web Component
 
+Check for browser compatibility  [here](http://caniuse.com/#search=components "can I use: web components").
+
 Use it like:
 
 **myPage.html**
