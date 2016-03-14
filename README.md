@@ -28,3 +28,10 @@ npm install x-div
 ```
 bower install x-div
 ```
+## Testing
+To test your x-div components just load `x-div-tester.js` instead of `x-div.js`
+and load your controller file with a `<script>` tag. The tester will not execute
+your component immediately, but store if to be executed by the test code.
+
+Execute your component with `xDivTester.callWith()`, and provire an HTMLElement
+as a parameter to be the target of the execution
