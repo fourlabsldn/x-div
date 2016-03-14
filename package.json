@@ -1,6 +1,6 @@
 {
   "name": "x-div",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Web Component to load Javascript modules",
   "main": "index.js",
   "scripts": {
