@@ -23,8 +23,7 @@
     "node_modules/",
     "bower_components/",
     "tests/",
-    "bower.json",
-    "package.json",
+    "build/"
     "Gruntfile.js",
     "*.log",
     "**/*.log"

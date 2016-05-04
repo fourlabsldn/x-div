@@ -9,8 +9,12 @@
   "author": "Four Labs",
   "license": "ISC",
   "devDependencies": {
+    "babel-preset-es2015-rollup": "^1.1.1",
     "grunt": "^0.4.5",
-    "jasmine": "^2.4.1"
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-rollup": "^0.7.1",
+    "jasmine": "^2.4.1",
+    "rollup-plugin-babel": "^2.4.0"
   },
   "dependencies": {}
 }
