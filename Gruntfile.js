@@ -38,15 +38,39 @@ module.exports = function (grunt) {
         dest: 'dist/x-div.js',
       },
     },
+    watch: {
+      demo: {
+        files: 'demo/**/*.*',
+        tasks: ['dist'],
+        options: {
+          livereload: true,
+        },
+      },
+      src: {
+        files: 'src/**/*.*',
+        tasks: ['dist'],
+        options: {
+          livereload: true,
+        },
+      },
+    },
+    open: {
+      demo: {
+        path: 'demo/index.html',
+        app: 'google-chrome',
+      },
+    },
   });
 
-  grunt.registerTask('travis', [
-      'jasmine',
-  ]);
+  grunt.registerTask('travis', ['jasmine']);
 
   grunt.loadNpmTasks('grunt-rollup');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-open');
 
   grunt.registerTask('default', ['jshint']);
+  grunt.registerTask('dev', ['dist', 'open', 'watch']);
+
   grunt.registerTask('dist', ['rollup', 'concat']);
 };

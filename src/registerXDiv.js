@@ -8,7 +8,7 @@ function registerXDiv() {
   const xProto = Object.create(HTMLElement.prototype);
 
   // Create methods for its lifecycle
-  xProto.attachedCallback = () => {
+  xProto.attachedCallback = function() {
     const scriptEl = document.createElement('script');
 
     if (!this.dataset.controller) {
