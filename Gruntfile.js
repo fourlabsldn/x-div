@@ -34,7 +34,7 @@ module.exports = function (grunt) {
         separator: ';\n',
       },
       dist: {
-        src: ['bower_components/webcomponentsjs/CustomElements.js', 'build/main.js'],
+        src: ['node_modules/webcomponents.js/CustomElements.min.js', 'build/main.js'],
         dest: 'dist/x-div.js',
       },
     },
