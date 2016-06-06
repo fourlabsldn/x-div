@@ -1,4 +1,6 @@
 const babel = require('rollup-plugin-babel');
+const nodeResolve = require('rollup-plugin-node-resolve');
+const commonjs = require('rollup-plugin-commonjs');
 
 module.exports = function (grunt) {
   'use strict';
@@ -15,10 +17,18 @@ module.exports = function (grunt) {
     },
     rollup: {
       options: {
-        plugins: function () {
+        plugins: () => {
           return [
+            nodeResolve({ jsnext: true, main: true }),
+            commonjs(),
             babel({
-              exclude: './node_modules/**',
+              runtimeHelpers: true,
+              exclude: 'node_modules/**',
+              plugins: ['transform-async-to-generator', [
+                'transform-runtime', {
+                  'polyfill': false,
+                  'regenerator': true,
+                }]],
               presets: ['es2015-rollup'],
             }),
           ];

@@ -1,4 +1,4 @@
-import assert from '../node_modules/fl-assert/dist/assert.js';
+import assert from 'fl-assert';
 
 class xDivTester {
   contructor() {
