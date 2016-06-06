@@ -1,19 +1,20 @@
+/* eslint-env node */
 const babel = require('rollup-plugin-babel');
 const nodeResolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
 
-module.exports = function (grunt) {
+module.exports = (grunt) => {
   'use strict';
   grunt.initConfig({
     jasmine: {
       components: {
         src: [
-        'components/*js'
+          'components/*js',
         ],
         options: {
-          specs: 'tests/specs/*Spec.js'
-        }
-      }
+          specs: 'tests/specs/*Spec.js',
+        },
+      },
     },
     rollup: {
       options: {
@@ -26,8 +27,8 @@ module.exports = function (grunt) {
               exclude: 'node_modules/**',
               plugins: ['transform-async-to-generator', [
                 'transform-runtime', {
-                  'polyfill': false,
-                  'regenerator': true,
+                  polyfill: false,
+                  regenerator: true,
                 }]],
               presets: ['es2015-rollup'],
             }),
