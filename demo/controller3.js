@@ -1,4 +1,4 @@
-xController((xDivEl) => {
+xController(function(xDivEl) {
   const elementCount = xDivEl.children.length;
-  xDivEl.innerHTML = `Initial element count = ${elementCount}`;
+  xDivEl.innerHTML = 'Initial element count ' + elementCount;
 });
