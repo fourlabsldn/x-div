@@ -13,8 +13,6 @@ import "./currentScriptPolyfill";
 function xController(callback) {
   'use strict';
 
-  console.log(document.currentScript);
-
   const execute = () => {
     callback.call(document.currentScript.parentElement, document.currentScript.parentElement);
   };

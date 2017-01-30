@@ -107,8 +107,6 @@ if ("undefined" === typeof document.currentScript) {
 function xController(callback) {
   'use strict';
 
-  console.log(document.currentScript);
-
   var execute = function execute() {
     callback.call(document.currentScript.parentElement, document.currentScript.parentElement);
   };
