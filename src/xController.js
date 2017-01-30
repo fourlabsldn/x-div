@@ -1,5 +1,5 @@
 
-
+import "./currentScriptPolyfill";
 // Calls a function and gives it an element to act on.
 
 /**
@@ -12,6 +12,8 @@
  */
 function xController(callback) {
   'use strict';
+
+  console.log(document.currentScript);
 
   const execute = () => {
     callback.call(document.currentScript.parentElement, document.currentScript.parentElement);
