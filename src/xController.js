@@ -3,9 +3,9 @@ import regexMatch from "./utils/regexMatch";
 // Calls a function and gives it an element to act on.
 
 const getCurrentScript = () => {
-    // if (document.currentScript) {
-    //     return document.currentScript;
-    // }
+    if (document.currentScript) {
+        return document.currentScript;
+    }
 
     try {
         throw new Error();
