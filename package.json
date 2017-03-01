@@ -29,7 +29,8 @@
     "jasmine": "^2.4.1",
     "rollup-plugin-babel": "^2.4.0",
     "rollup-plugin-commonjs": "^2.2.1",
-    "rollup-plugin-node-resolve": "^1.7.3"
+    "rollup-plugin-node-resolve": "^1.7.3",
+    "webcomponents.js": "^0.7.24"
   },
   "dependencies": {
     "fl-assert": "^1.0.0"

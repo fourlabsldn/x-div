@@ -7,29 +7,33 @@ const getCurrentScript = () => {
     //     return document.currentScript;
     // }
 
-    const stack = new Error().stack.toString();
-    const scriptMark = regexMatch(/\sat\s.+?(\n|$)/g, stack)
-        .map(urlMarker.getMark)
-        .filter(v => !!v)[0];
+    try {
+        throw new Error();
+    } catch (e) {
+        const stack = e.stack.toString();
+        const scriptMark = regexMatch(/\sat\s.+?(\n|$)/g, stack)
+      .map(urlMarker.getMark)
+      .filter(v => !!v)[0];
 
-    if (!scriptMark) {
-        throw new Error("No url mark current Script found");
+        if (!scriptMark) {
+            throw new Error("No url mark current Script found");
+        }
+
+        const scripts = document.getElementsByTagName("script");
+        const currentScript = [].slice.call(scripts)
+      .filter((scriptEl) => {
+          const scriptSrc = scriptEl.getAttribute("src") || "";
+          const elMark = urlMarker.getMark(scriptSrc);
+          return elMark === scriptMark;
+      })[0];
+
+
+        if (!scriptMark) {
+            throw new Error("currentScript not found");
+        }
+
+        return currentScript;
     }
-
-    const scripts = document.getElementsByTagName("script");
-    const currentScript = [].slice.call(scripts)
-        .filter((scriptEl) => {
-            const scriptSrc = scriptEl.getAttribute("src") || "";
-            const elMark = urlMarker.getMark(scriptSrc);
-            return elMark === scriptMark;
-        })[0];
-
-
-    if (!scriptMark) {
-        throw new Error("currentScript not found");
-    }
-
-    return currentScript;
 };
 
 /**

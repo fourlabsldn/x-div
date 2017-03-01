@@ -13,12 +13,12 @@ function registerXDiv() {
     xProto.attachedCallback = function () {
         const scriptEl = document.createElement("script");
 
-        if (!this.dataset.controller) {
+        if (!this.getAttribute("data-controller")) {
             console.error("No controller specified for x-div.");
             return;
         }
 
-        scriptEl.src = getControllerSrc(this.dataset.controller);
+        scriptEl.src = getControllerSrc(this.getAttribute("data-controller"));
         scriptEl.async = true;
         this.appendChild(scriptEl);
     };
