@@ -1,3 +1,5 @@
+import urlMarker from "./utils/urlMarker";
+
 /**
  * Registers the `x-div` HTMLElement
  * @method registerXDiv
@@ -5,26 +7,26 @@
  */
 function registerXDiv() {
   // Create our 'x-div' Web Component Prototype
-  const xProto = Object.create(HTMLElement.prototype);
+    const xProto = Object.create(HTMLElement.prototype);
 
   // Create methods for its lifecycle
-  xProto.attachedCallback = function() {
-    const scriptEl = document.createElement('script');
+    xProto.attachedCallback = function () {
+        const scriptEl = document.createElement("script");
 
-    if (!this.dataset.controller) {
-      console.error('No controller specified for x-div.');
-      return;
-    }
+        if (!this.getAttribute("data-controller")) {
+            console.error("No controller specified for x-div.");
+            return;
+        }
 
-    scriptEl.src = getControllerSrc(this.dataset.controller);
-    scriptEl.async = true;
-    this.appendChild(scriptEl);
-  };
+        scriptEl.src = getControllerSrc(this.getAttribute("data-controller"));
+        scriptEl.async = true;
+        this.appendChild(scriptEl);
+    };
 
   // Register the Element
-  document.registerElement('x-div', {
-    prototype: xProto,
-  });
+    document.registerElement("x-div", {
+        prototype: xProto
+    });
 }
 
 /**
@@ -35,11 +37,11 @@ function registerXDiv() {
  * @return {String} The full controller src value.
  */
 function getControllerSrc(controllerSrc) {
-  if (/\.js$/i.test(controllerSrc)) {
-    return controllerSrc;
-  }
+    const src = /\.js$/i.test(controllerSrc)
+      ? controllerSrc
+      : `${controllerSrc}.js`;
 
-  return `${controllerSrc}.js`;
+    return urlMarker.mark(src);
 }
 
 export default registerXDiv;
