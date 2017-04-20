@@ -68,9 +68,9 @@ function getControllerSrc(controllerSrc) {
 // Calls a function and gives it an element to act on.
 
 var getCurrentScript = function getCurrentScript() {
-    // if (document.currentScript) {
-    //     return document.currentScript;
-    // }
+    if (document.currentScript) {
+        return document.currentScript;
+    }
 
     try {
         throw new Error();
